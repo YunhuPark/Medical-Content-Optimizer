@@ -29,7 +29,7 @@
 * **인사이트:** 의료 콘텐츠의 확산을 위해서는 **'전문가의 신뢰성'에 '일반인의 마케팅적 키워드'를 결합**하는 전략이 필요함.
 
 <p align="center">
-  <img src="image_695c68.jpg" alt="전문가 vs 일반인 비교 분석 그래프" width="80%">
+  <img src="images/image_696fa6.jpg" alt="전문가 vs 일반인 비교 분석 그래프" width="80%">
   <br>
   <em>[Figure 1] 전문가 그룹(Medical Pro) vs 일반인 그룹(General) 성과 비교</em>
 </p>
@@ -40,7 +40,7 @@
 * **패턴 도출:** "공포심 자극(충격, 현실)" + "쉬운 해결책(음식, 3가지)" + "권위 차용(교수, 박사)"의 3박자 패턴 확인.
 
 <p align="center">
-  <img src="image_696fa6.jpg" alt="일반인 유튜버 키워드 랭킹" width="80%">
+  <img src="images/image_695c68.jpg" alt="일반인 유튜버 키워드 랭킹" width="80%">
   <br>
   <em>[Figure 2] 일반인 유튜버들의 조회수 Trigger Keyword TOP 15</em>
 </p>
@@ -51,7 +51,7 @@
 * **성과:** `youtube_analyzer.py` 구현 완료. 실제 테스트 결과, 최적화된 키워드 조합 시 예측 점수 100점 달성 및 조회수 상승 요인 시각화 성공.
 
 <p align="center">
-  <img src="image_69dfcd.jpg" alt="AI 판독기 실행 화면" width="80%">
+  <img src="images/image_69dfcd.jpg" alt="AI 판독기 실행 화면" width="80%">
   <br>
   <em>[Figure 3] AI Title Scorer 실제 구동 화면 (100점 달성 예시)</em>
 </p>
