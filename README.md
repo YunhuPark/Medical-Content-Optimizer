@@ -28,15 +28,33 @@
 * **정량적 비교:** 분석 결과, 일반인 그룹의 평균 조회수가 전문가 그룹 대비 **약 1.4배 높음**을 확인. 반면, 신뢰도 지표인 '좋아요 비율(Like Ratio)'은 전문가 그룹이 우세함.
 * **인사이트:** 의료 콘텐츠의 확산을 위해서는 **'전문가의 신뢰성'에 '일반인의 마케팅적 키워드'를 결합**하는 전략이 필요함.
 
+<p align="center">
+  <img src="image_695c68.jpg" alt="전문가 vs 일반인 비교 분석 그래프" width="80%">
+  <br>
+  <em>[Figure 1] 전문가 그룹(Medical Pro) vs 일반인 그룹(General) 성과 비교</em>
+</p>
+
 ### 3-3. 텍스트 마이닝 (Text Mining)
 * 일반인 그룹의 영상 제목을 형태소 단위로 분석(Tokenizing).
 * **핵심 키워드 추출:** `음식`, `3가지`, `충격`, `과일`, `교수` 등의 단어가 유의미하게 높은 빈도(TF)로 등장함을 발견.
 * **패턴 도출:** "공포심 자극(충격, 현실)" + "쉬운 해결책(음식, 3가지)" + "권위 차용(교수, 박사)"의 3박자 패턴 확인.
 
+<p align="center">
+  <img src="image_696fa6.jpg" alt="일반인 유튜버 키워드 랭킹" width="80%">
+  <br>
+  <em>[Figure 2] 일반인 유튜버들의 조회수 Trigger Keyword TOP 15</em>
+</p>
+
 ## 🤖 4. 솔루션 개발: AI 제목 판독기 (AI Title Scorer)
 * **기능:** 사용자가 입력한 제목의 '잠재 조회수 효율'을 예측하여 **0~100점의 점수**로 환산해주는 알고리즘 개발.
 * **로직:** 텍스트 마이닝으로 추출한 고효율 키워드에 가중치(Weighting)를 부여하여, 단순 매칭이 아닌 **데이터 기반의 평가 모델** 구축.
 * **성과:** `youtube_analyzer.py` 구현 완료. 실제 테스트 결과, 최적화된 키워드 조합 시 예측 점수 100점 달성 및 조회수 상승 요인 시각화 성공.
+
+<p align="center">
+  <img src="image_69dfcd.jpg" alt="AI 판독기 실행 화면" width="80%">
+  <br>
+  <em>[Figure 3] AI Title Scorer 실제 구동 화면 (100점 달성 예시)</em>
+</p>
 
 ## 🛠 5. 기술 스택 (Tech Stack)
 * **Language:** Python 3.x
@@ -56,4 +74,7 @@ youtube_study/
 ├── medical_final.csv       # 💾 분석용 샘플 데이터 (당뇨)
 ├── requirements.txt        # 📦 의존성 패키지 목록
 ├── .gitignore              # 🚫 Git 업로드 제외 설정
+├── image_695c68.jpg        # 🖼️ README용 이미지 (그래프)
+├── image_696fa6.jpg        # 🖼️ README용 이미지 (키워드)
+├── image_69dfcd.jpg        # 🖼️ README용 이미지 (실행화면)
 └── README.md               # 📄 프로젝트 명세서
