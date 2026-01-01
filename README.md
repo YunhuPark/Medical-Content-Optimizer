@@ -47,13 +47,17 @@
 
 ## 🤖 4. 솔루션 개발: AI 제목 판독기 (AI Title Scorer)
 * **기능:** 사용자가 입력한 제목의 '잠재 조회수 효율'을 예측하여 **0~100점의 점수**로 환산해주는 알고리즘 개발.
-* **로직:** 텍스트 마이닝으로 추출한 고효율 키워드에 가중치(Weighting)를 부여하여, 단순 매칭이 아닌 **데이터 기반의 평가 모델** 구축.
-* **성과:** `youtube_analyzer.py` 구현 완료. 실제 테스트 결과, 최적화된 키워드 조합 시 예측 점수 100점 달성 및 조회수 상승 요인 시각화 성공.
+* **로직 (Technical Core):**
+    * **실시간 전처리 엔진(`processor.py`)**: 사용자 입력값에서 불필요한 특수문자, 태그(`[ ]`, `( )`), 이모지 등을 **정규표현식(Regex)**으로 즉시 정제하여 판독 정확도를 향상함.
+    * **데이터 일관성 확보**: 학습 데이터와 사용자 입력 데이터에 동일한 전처리 파이프라인을 적용하여 신뢰도 높은 평가 모델 구축.
+    * **가중치 부여**: 텍스트 마이닝으로 추출한 고효율 키워드에 빈도 기반 가중치를 부여하여 단순 매칭 이상의 평가 수행.
+* **전처리 도입 배경:** > "유튜브 제목 특성상 특수문자와 문장 부호가 클릭률에 큰 영향을 미치지만, 데이터 기반의 정확한 키워드 가중치 분석을 위해 노이즈를 제거하는 실시간 전처리 엔진을 구현하였습니다. 이를 통해 장식에 가려진 '핵심 트리거 단어'의 성과를 객관적으로 측정합니다."
+* **성과:** `youtube_analyzer.py` 구현 완료. 실제 테스트 결과, 최적화된 키워드 조합 시 예측 점수 100점 달성 및 조회수 상승 요인 실시간 피드백 성공.
 
 <p align="center">
   <img src="images/image_69dfcd.jpg" alt="AI 판독기 실행 화면" width="80%">
   <br>
-  <em>[Figure 3] AI Title Scorer 실제 구동 화면 (100점 달성 예시)</em>
+  <em>[Figure 3] AI Title Scorer 실제 구동 화면 (전처리 엔진 적용 및 100점 달성 예시)</em>
 </p>
 
 ## 🛠 5. 기술 스택 (Tech Stack)
@@ -61,21 +65,17 @@
 * **Data Collection:** Google API Client (YouTube Data API v3)
 * **Data Analysis:** Pandas, NumPy
 * **Visualization:** Matplotlib, Seaborn
-* **Text Processing:** Re (Regular Expression), Collections
+* **Text Processing:** **Re (Regular Expression)**, Collections
 
 ## 📂 6. 프로젝트 구조 (File Structure)
 ```bash
 youtube_study/
-├── archive/                # 📜 학습 과정 아카이브 (초기 모델링 기록)
-│   ├── main.py             # IT 기술(API) 기초 학습 코드
-│   ├── analyze.py          # 데이터 시각화 연습 코드
-│   └── medical_study.py    # 의료 데이터 비교 분석 초기 코드
-├── images/                 # 🖼️ README용 이미지 리소스 저장소
-│   ├── image_695c68.jpg    # 전문가 vs 일반인 비교 그래프
-│   ├── image_696fa6.jpg    # 키워드 랭킹 차트
-│   └── image_69dfcd.jpg    # AI 판독기 실행 화면
-├── youtube_analyzer.py     # ⭐ [Main] 최종 완성된 AI 분석기
-├── medical_final.csv       # 💾 분석용 샘플 데이터 (당뇨)
-├── requirements.txt        # 📦 의존성 패키지 목록
-├── .gitignore              # 🚫 Git 업로드 제외 설정
-└── README.md               # 📄 프로젝트 명세서
+├── archive/                 # 📜 학습 과정 아카이브 (초기 모델링 기록)
+├── images/                  # 🖼️ README용 이미지 리소스 저장소
+├── processor.py             # 🛠️ 실시간 텍스트 전처리 모듈 (Regex 엔진)
+├── youtube_analyzer.py      # ⭐ [Main] 최종 완성된 AI 제목 판독기 (게임 모드)
+├── medical_final.csv        # 💾 수집된 원본 데이터 (Raw Data)
+├── medical_cleaned.csv      # 💾 전처리 완료 데이터 (Processed Data)
+├── .gitignore               # 🚫 Git 업로드 제외 설정 (캐시 및 환경 파일 관리)
+├── requirements.txt         # 📦 의존성 패키지 목록
+└── README.md                # 📄 프로젝트 명세서

@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+
+# CSV 파일 관리
+*.csv
+!medical_final.csv
+!medical_cleaned.csv
+
+# 시스템 파일
+.DS_Store
