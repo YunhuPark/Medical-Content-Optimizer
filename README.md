@@ -94,16 +94,27 @@
 ## 🚀 6. 시작하기 (Getting Started)
 
 ### 설치 (Installation)
+1. 저장소를 클론합니다.
 ```bash
 git clone [https://github.com/사용자명/Medical-Content-Optimizer.git](https://github.com/사용자명/Medical-Content-Optimizer.git)
+```
+
+2. 저장소를 클론합니다.
+```bash
 cd Medical-Content-Optimizer
+```
+
+3. 필요한 패키지를 설치합니다.
+```bash
 pip install -r requirements.txt
 ```
 
 ### 실행 (Execution)
+## AI 제목 판독기 실행:
 ```bash
 python youtube_analyzer.py
 ```
+명령어를 실행한 후, 분석하고 싶은 유튜브 제목을 입력하여 점수를 확인하세요.
 
 ## 📂 7. 프로젝트 구조 (File Structure)
 
@@ -122,7 +133,7 @@ youtube_study/
 
 ## 🎯 8. 결론 및 기대효과 (Conclusion)
 
-**결론**: 본 프로젝트를 통해 고성과 의료 콘텐츠는 단순 자극이 아닌 **'정보의 구조화'와 '전문성 인용'**의 조화로 이루어짐을 데이터로 증명함.
+**결론**: 본 프로젝트를 통해 고성과 의료 콘텐츠는 단순 자극이 아닌 **'정보의 구조화'**와 **'전문성 인용'**의 조화로 이루어짐을 데이터로 증명함.
 
 **기대효과**: 전문가의 전문 지식을 대중 친화적인 언어로 치환하는 가이드라인을 제공하여 올바른 의학 정보 확산에 기여함.
 
